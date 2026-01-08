@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Omnigence.ai — Internship Application</title>
+  <meta name="description" content="Apply to join Omnigence.ai — AI-powered automation for SMB operations." />
+  <style>
+    :root{
+      --bg:#0b0f17;
+      --card:#101827;
+      --muted:#94a3b8;
+      --text:#e5e7eb;
+      --line:#22304a;
+      --accent:#60a5fa;
+      --accent2:#22c55e;
+      --danger:#ef4444;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 980px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--font);
+      background: radial-gradient(1200px 700px at 20% -10%, rgba(96,165,250,.25), transparent 60%),
+                  radial-gradient(900px 600px at 80% 0%, rgba(34,197,94,.15), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 56px}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; padding:14px 16px;
+      border:1px solid var(--line);
+      background: rgba(16,24,39,.6);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+    .brand{display:flex; align-items:center; gap:10px}
+    .brand img{width:34px; height:34px}
+    .brand .name{font-weight:700; letter-spacing:.2px}
+    .pill{
+      font-size:12px; color:#cbd5e1;
+      border:1px solid var(--line);
+      padding:6px 10px; border-radius:999px;
+      background: rgba(148,163,184,.08);
+    }
+    .hero{margin-top:22px; display:grid; grid-template-columns: 1.2fr .8fr; gap:16px}
+    .card{
+      border:1px solid var(--line);
+      background: rgba(16,24,39,.65);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:18px;
+    }
+    h1{margin:0 0 6px; font-size:26px}
+    h2{margin:0 0 10px; font-size:16px; color:#cbd5e1}
+    .muted{color:var(--muted)}
+    .grid2{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+    .grid3{display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px}
+    .sec{margin-top:16px}
+    .kvs{display:grid; gap:10px; margin-top:10px}
+    .kv{
+      display:flex; justify-content:space-between; gap:10px;
+      padding:10px 12px; border:1px solid var(--line); border-radius: 14px;
+      background: rgba(148,163,184,.06);
+    }
+    .kv b{color:#e2e8f0}
+    .list{margin:8px 0 0; padding-left:18px; color:#cbd5e1}
+    .list li{margin:6px 0}
+    .tagrow{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .tag{
+      font-size:12px; color:#cbd5e1;
+      border:1px solid var(--line);
+      padding:6px 10px; border-radius:999px;
+      background: rgba(96,165,250,.08);
+    }
+    label{display:block; font-size:12px; color:#cbd5e1; margin:10px 0 6px}
+    input, select, textarea{
+      width:100%;
+      padding:10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(2,6,23,.6);
+      color: var(--text);
+      outline: none;
+    }
+    textarea{min-height:110px; resize:vertical}
+    input:focus, select:focus, textarea:focus{
+      border-color: rgba(96,165,250,.65);
+      box-shadow: 0 0 0 3px rgba(96,165,250,.15);
+    }
+    .btnrow{display:flex; gap:10px; align-items:center; margin-top:14px; flex-wrap:wrap}
+    button{
+      border:0;
+      border-radius: 12px;
+      padding:10px 14px;
+      font-weight:700;
+      cursor:pointer;
+      background: linear-gradient(135deg, rgba(96,165,250,.95), rgba(34,197,94,.75));
+      color: #07101f;
+    }
+    .btn-secondary{
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-weight: 600;
+    }
+    .note{
+      font-size:12px;
+      color: var(--muted);
+      margin-top:10px;
+    }
+    .status{
+      margin-top:10px; font-size:13px;
+      padding:10px 12px; border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(148,163,184,.06);
+      display:none;
+    }
+    .status.ok{border-color: rgba(34,197,94,.35)}
+    .status.err{border-color: rgba(239,68,68,.35)}
+    footer{margin-top:18px; color:var(--muted); font-size:12px}
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <img src="./logo.svg" alt="Omnigence.ai logo" />
+        <div>
+          <div class="name">Omnigence.ai</div>
+          <div class="muted" style="font-size:12px;">AI-powered automation for SMB operations</div>
+        </div>
+      </div>
+      <div class="pill">Remote • Internship • Full-stack</div>
+    </div>
+
+    <div class="hero">
+      <div class="card">
+        <h1>Full‑Stack Software Engineer Intern (Backend + Frontend)</h1>
+        <h2>Build an AI-powered operations assistant for SMBs</h2>
+        <p class="muted">
+          Omnigence.ai is building an AI-powered automation product for small and medium-sized businesses to reduce repetitive daily work in
+          finance management, HR workflows, and business analytics — enabling more efficient operations and supporting the “one‑person company”
+          vision for entrepreneurship.
+        </p>
+
+        <div class="sec">
+          <div class="kvs">
+            <div class="kv"><b>Commitment</b><span class="muted">Minimum 20 hours/week</span></div>
+            <div class="kv"><b>Duration</b><span class="muted">Mutual agreement / contract</span></div>
+            <div class="kv"><b>Stipend</b><span class="muted">$625 – $1,250 (paid by check/cash)</span></div>
+          </div>
+        </div>
+
+        <div class="sec">
+          <h2>Tech Stack</h2>
+          <div class="tagrow">
+            <span class="tag">Python</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">LangGraph</span>
+            <span class="tag">LLMs (GPT / Claude / etc.)</span>
+            <span class="tag">SQLite / Postgres</span>
+            <span class="tag">React (JavaScript)</span>
+            <span class="tag">Cloud (AWS fundamentals)</span>
+          </div>
+        </div>
+
+        <div class="sec">
+          <h2>What you’ll work on</h2>
+          <ul class="list">
+            <li>Build backend APIs for an agentic workflow (orchestrator + domain agents) with persistent state and checkpoints.</li>
+            <li>Improve “clarification-first” UX: menu selection → ask top missing fields → resume the flow.</li>
+            <li>Implement safe file upload (resume), and email notifications for applications.</li>
+            <li>Collaborate on a clean React UI and incremental product iteration.</li>
+          </ul>
+        </div>
+
+        <div class="sec">
+          <h2>Requirements</h2>
+          <ul class="list">
+            <li>Comfortable with Python and basic backend development.</li>
+            <li>Basic data structures and OOP fundamentals.</li>
+            <li>Comfortable with modern JavaScript (React familiarity is a plus).</li>
+            <li>Curious about LLMs / AI agents (prompting, structured outputs, tool use).</li>
+            <li>Strong communication and teamwork mindset.</li>
+          </ul>
+        </div>
+
+        <footer>
+          Prefer email? You can also send your resume to
+          <a href="mailto:omnigence.ai@gmail.com?subject=Omnigence.ai%20Internship%20Application">omnigence.ai@gmail.com</a>.
+        </footer>
+      </div>
+
+      <div class="card">
+        <h2>Apply</h2>
+        <p class="muted" style="margin-top:-4px;">This form submits to <code>/api/apply</code> on the same domain.</p>
+
+        <form id="applyForm">
+          <!-- Honeypot (spam trap): keep hidden -->
+          <input type="text" name="website" autocomplete="off" tabindex="-1"
+                 style="position:absolute; left:-9999px; opacity:0;" />
+
+          <label for="name">Full name *</label>
+          <input id="name" name="name" required />
+
+          <div class="grid2">
+            <div>
+              <label for="email">Email *</label>
+              <input id="email" name="email" type="email" required />
+            </div>
+            <div>
+              <label for="hours_per_week">Hours/week *</label>
+              <select id="hours_per_week" name="hours_per_week" required>
+                <option value="">Select…</option>
+                <option>20</option>
+                <option>25</option>
+                <option>30</option>
+                <option>35</option>
+                <option>40</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid2">
+            <div>
+              <label for="linkedin">LinkedIn (optional)</label>
+              <input id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/…" />
+            </div>
+            <div>
+              <label for="github">GitHub (optional)</label>
+              <input id="github" name="github" placeholder="https://github.com/…" />
+            </div>
+          </div>
+
+          <label for="portfolio">Portfolio / Website (optional)</label>
+          <input id="portfolio" name="portfolio" placeholder="https://…" />
+
+          <label for="note">Short note (optional)</label>
+          <textarea id="note" name="note" placeholder="Tell us about yourself"></textarea>
+
+          <label for="resume">Resume (PDF/DOC/DOCX) *</label>
+          <input id="resume" name="resume" type="file" accept=".pdf,.doc,.docx" required />
+
+          <div class="btnrow">
+            <button type="submit">Submit application</button>
+            <a class="btn-secondary" href="mailto:omnigence.ai@gmail.com?subject=Omnigence.ai%20Internship%20Application" style="padding:10px 14px; border-radius:12px; display:inline-block;">
+              Email instead
+            </a>
+          </div>
+
+          <div class="note">
+            By submitting, you agree that we may contact you about this internship opportunity.
+          </div>
+
+          <div id="statusBox" class="status"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById("applyForm");
+    const statusBox = document.getElementById("statusBox");
+
+    function showStatus(type, msg){
+      statusBox.className = "status " + (type === "ok" ? "ok" : "err");
+      statusBox.style.display = "block";
+      statusBox.textContent = msg;
+    }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      statusBox.style.display = "none";
+
+      const fd = new FormData(form);
+
+      try{
+        const res = await fetch("/api/apply", {
+          method: "POST",
+          body: fd
+        });
+
+        const data = await res.json().catch(() => ({}));
+
+        if(!res.ok){
+          const msg = data?.detail || data?.message || "Submission failed. Please email us instead.";
+          showStatus("err", msg);
+          return;
+        }
+
+        showStatus("ok", "✅ Thanks! Your application was submitted successfully. We’ll reach out if there’s a fit.");
+        form.reset();
+      }catch(err){
+        showStatus("err", "Network error. Please email your resume to omnigence.ai@gmail.com.");
+      }
+    });
+  </script>
+</body>
+</html>
