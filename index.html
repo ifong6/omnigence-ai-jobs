@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Omnigence.ai — Internship Application</title>
-  <meta name="description" content="Apply to join Omnigence.ai — AI-powered automation for SMB operations." />
+  <title>Omnigence.ai – Internship Application</title>
+  <meta name="description" content="Apply to join Omnigence.ai – AI-powered automation for SMB operations." />
   <style>
     :root{
       --bg:#0b0f17;
@@ -127,6 +127,38 @@
     }
     .status.ok{border-color: rgba(34,197,94,.35)}
     .status.err{border-color: rgba(239,68,68,.35)}
+    .email-box{
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .email-box h3{
+      font-size: 20px;
+      margin: 0 0 20px;
+      color: #e2e8f0;
+    }
+    .email-box .email-link{
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(96,165,250,.08);
+      transition: all 0.3s;
+    }
+    .email-box .email-link:hover{
+      background: rgba(96,165,250,.15);
+      text-decoration: none;
+      transform: translateY(-2px);
+    }
+    .email-box p{
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
     footer{margin-top:18px; color:var(--muted); font-size:12px}
     @media (max-width: 900px){
       .hero{grid-template-columns:1fr}
@@ -152,7 +184,7 @@
         <h2>Build an AI-powered operations assistant for SMBs</h2>
         <p class="muted">
           Omnigence.ai is building an AI-powered automation product for small and medium-sized businesses to reduce repetitive daily work in
-          finance management, HR workflows, and business analytics — enabling more efficient operations and supporting the “one‑person company”
+          finance management, HR workflows, and business analytics – enabling more efficient operations and supporting the "one‑person company"
           vision for entrepreneurship.
         </p>
 
@@ -178,10 +210,10 @@
         </div>
 
         <div class="sec">
-          <h2>What you’ll work on</h2>
+          <h2>What you'll work on</h2>
           <ul class="list">
             <li>Build backend APIs for an agentic workflow (orchestrator + domain agents) with persistent state and checkpoints.</li>
-            <li>Improve “clarification-first” UX: menu selection → ask top missing fields → resume the flow.</li>
+            <li>Improve "clarification-first" UX: menu selection → ask top missing fields → resume the flow.</li>
             <li>Implement safe file upload (resume), and email notifications for applications.</li>
             <li>Collaborate on a clean React UI and incremental product iteration.</li>
           </ul>
@@ -197,19 +229,32 @@
             <li>Strong communication and teamwork mindset.</li>
           </ul>
         </div>
-
-        <footer>
-          Prefer email? You can also send your resume to
-          <a href="mailto:omnigence.ai@gmail.com?subject=Omnigence.ai%20Internship%20Application">omnigence.ai@gmail.com</a>.
-        </footer>
       </div>
 
       <div class="card">
-        <h2>Apply</h2>
+        <h2>Apply Now</h2>
+        
+        <div class="email-box">
+          <h3>To apply for this position, please email your resume to:</h3>
+          <a href="mailto:omnigence.ai@gmail.com?subject=Omnigence.ai%20Internship%20Application" class="email-link">
+            📧 omnigence.ai@gmail.com
+          </a>
+          <p>Please include the following in your email:</p>
+          <ul class="list" style="text-align: left; margin: 20px auto; max-width: 400px;">
+            <li>Your resume (PDF/DOC preferred)</li>
+            <li>Hours per week you're available</li>
+            <li>Links to LinkedIn/GitHub/Portfolio (optional)</li>
+            <li>A brief note about yourself (optional)</li>
+          </ul>
+        </div>
+
+        <!-- 
+        ==============================================================
+        ORIGINAL FORM - COMMENTED OUT (NO BACKEND NEEDED)
+        ==============================================================
         <p class="muted" style="margin-top:-4px;">This form submits to <code>/api/apply</code> on the same domain.</p>
 
         <form id="applyForm">
-          <!-- Honeypot (spam trap): keep hidden -->
           <input type="text" name="website" autocomplete="off" tabindex="-1"
                  style="position:absolute; left:-9999px; opacity:0;" />
 
@@ -267,10 +312,19 @@
 
           <div id="statusBox" class="status"></div>
         </form>
+        ==============================================================
+        END OF COMMENTED OUT FORM
+        ==============================================================
+        -->
+
       </div>
     </div>
   </div>
 
+  <!-- 
+  ==============================================================
+  ORIGINAL FORM SUBMISSION JAVASCRIPT - COMMENTED OUT
+  ==============================================================
   <script>
     const form = document.getElementById("applyForm");
     const statusBox = document.getElementById("statusBox");
@@ -301,12 +355,17 @@
           return;
         }
 
-        showStatus("ok", "✅ Thanks! Your application was submitted successfully. We’ll reach out if there’s a fit.");
+        showStatus("ok", "✅ Thanks! Your application was submitted successfully. We'll reach out if there's a fit.");
         form.reset();
       }catch(err){
         showStatus("err", "Network error. Please email your resume to omnigence.ai@gmail.com.");
       }
     });
   </script>
+  ==============================================================
+  END OF COMMENTED OUT JAVASCRIPT
+  ==============================================================
+  -->
+
 </body>
 </html>
